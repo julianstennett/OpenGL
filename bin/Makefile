@@ -1,5 +1,22 @@
-build:
-	g++ -g --std=c++17 -I../include -L../lib ../src/*.cpp ../src/glad.c -lglfw3dll -o main
-run:
-	g++ -g --std=c++17 -I../include -L../lib ../src/*.cpp ../src/glad.c -lglfw3dll -o main
-	./main.exe
+CXX := g++
+CXXFLAGS := -g --std=c++17
+INCLUDE_DIR := -I../include
+LIB_DIR := -L../lib
+LIBRARIES := -lglfw3dll
+SOURCE_FILES := ../src/*.cpp ../src/glad.c
+EXECUTABLE := main.exe
+
+.PHONY: all build run clean
+
+all: build run
+
+build: $(EXECUTABLE)
+
+$(EXECUTABLE): $(SOURCE_FILES)
+	$(CXX) $(CXXFLAGS) $(INCLUDE_DIR) $(LIB_DIR) $^ $(LIBRARIES) -o $@
+
+run: build
+	./$(EXECUTABLE)
+
+clean:
+	rm -f $(EXECUTABLE)
