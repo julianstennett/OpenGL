@@ -19,4 +19,5 @@ run: build
 	./$(EXECUTABLE)
 
 clean:
-	rm -f $(EXECUTABLE)
+	del /Q .\$(EXECUTABLE)
+
