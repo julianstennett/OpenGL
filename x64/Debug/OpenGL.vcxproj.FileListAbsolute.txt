@@ -1,0 +1,2 @@
+C:\Users\Julian\Desktop\OpenGL\x64\Debug\OpenGL.exe
+C:\Users\Julian\Desktop\Libraries\OpenGL\x64\Debug\OpenGL.exe
