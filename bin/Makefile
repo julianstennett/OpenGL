@@ -1,9 +1,9 @@
-CXX := g++
+lCXX := g++
 CXXFLAGS := -g --std=c++17
 INCLUDE_DIR := -I../include
 LIB_DIR := -L../lib
-LIBRARIES := -lglfw3dll
-SOURCE_FILES := ../src/*.cpp ../src/glad.c
+LIBRARIES := -lglew32s -lglfw3dll -lopengl32 -lgdi32
+SOURCE_FILES := ../src/*.cpp
 EXECUTABLE := main.exe
 
 .PHONY: all build run clean
@@ -20,5 +20,4 @@ run: build
 
 clean:
 	del /Q .\$(EXECUTABLE)
-
 
